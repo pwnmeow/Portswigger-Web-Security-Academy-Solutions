@@ -2,6 +2,20 @@
 
 Solutions for SQL Injections 
 
+## Tests 
+- [ ] Examine the database 
+- [ ] Login Bypass 
+- [ ] Union Error Based Injection 
+- [ ] Error Based Injections 
+- [ ] Blind SQLI
+- [ ] Condition Based Blind
+- [ ] Responses Based Blind 
+- [ ] Error Based Blind 
+- [ ] Out Of Band Blind 
+
+
+  
+
 ## Retrieving hidden data
 
 ```python
